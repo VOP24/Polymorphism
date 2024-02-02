@@ -11,7 +11,7 @@ package vop;
  *
  * @author erso
  */
-public abstract class AbstractShape implements ShapeInterface{
+public abstract class AbstractShape implements ShapeInterface {
 
     @Override
     public String toString() {

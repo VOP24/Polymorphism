@@ -5,6 +5,8 @@
  */
 package vop;
 
+import java.lang.reflect.Parameter;
+
 /**
  *
  * @author erso
@@ -32,7 +34,24 @@ public class ShapeFacade {
 
     // Facadens public metoder
     public String getShapeInfo(SHAPES shape, double... parametre) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        AbstractShape figure;
+        switch (shape) {
+            case CIRCLE:
+                figure = new Circle(parametre[0]);
+                break;
+            case SQUARE:
+                figure = new Square(parametre[0]);
+                break;
+            case ELLIPSE:
+                figure = new Ellipse(parametre[0], parametre[1]);
+                break;
+            case RECTANGLE:
+                figure = new Rectangle(parametre[0], parametre[1]);
+                break;
+            default:
+                throw new UnsupportedOperationException("Not supported yet.");
+        }
+        return figure.toString();
     }
 
 }
